@@ -17,9 +17,9 @@ namespace DemoAPI.Controllers
             public int Score { get; set; }
         }
         public static List<Classroom> allMember = new List<Classroom>{
-                new Classroom { Id = "S01", Name = "Au", Score = 100 },
-                new Classroom { Id = "S02", Name = "Ae", Score = 90 },
-                new Classroom { Id = "S03", Name = "To", Score = 200 },
+                new Classroom { Id = "S01", Name = "Mick", Score = 100 },
+                new Classroom { Id = "S02", Name = "Aurora", Score = 90 },
+                new Classroom { Id = "S03", Name = "Boss", Score = 200 },
             };
 
         [HttpGet]
