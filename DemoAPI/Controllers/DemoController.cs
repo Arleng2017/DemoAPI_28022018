@@ -55,7 +55,7 @@ namespace DemoAPI.Controllers
                 var addStudent = allMember.FirstOrDefault(it => it.Id == value.Id);
                 if (addStudent != null)
                 {
-                   addStudent.Score = value.Score;
+                    addStudent.Score = value.Score;
                 }
             }
         }

@@ -10,6 +10,9 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
 
   public getData: any = [];
+  newStudentName: string;
+  newStudentScore: number;
+  deleteStudent: any;
 
   constructor(public navCtrl: NavController, public callAPI: CallApiProvider, public http: HttpClient) {
     //this.callAPI.getStudentData();
@@ -25,15 +28,26 @@ export class HomePage {
 
   }
 
-  onSubmit(idStudent : string) {
+  getDataById(idStudent: string) {
     console.log(idStudent);
-    this.navCtrl.push("InformationPage", { _idStudent: idStudent});
-    
+    this.navCtrl.push("InformationPage", { _idStudent: idStudent });
+
   }
 
-  editData(){
-    
+  editData(idStudent: string) {
+    console.log(idStudent);
+    this.navCtrl.push("EditDataPage", { _idStudent: idStudent });
   }
 
+  addData() {
+    this.callAPI.postStudentData(this.newStudentName).subscribe(data => {
 
+    });;
+  }
+
+  deleteData() {
+    this.callAPI.deleteStudentData(this.deleteData).subscribe(data =>{
+
+    });;
+  }
 }

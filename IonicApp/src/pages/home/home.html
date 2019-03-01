@@ -8,28 +8,49 @@
 
 <ion-content padding>
 
-  <form  *ngFor="let buttonName of getData" (ngSubmit)="onSubmit(buttonName.id)">
+  <h1>Students</h1>
+  <div *ngFor="let buttonName of getData">
     <ion-card padding>
-      <div>
-        <h1 padding>{{buttonName.name}}</h1>
-        <ion-col>
-          <button ion-button block color="yellow">{{buttonName.name}} information</button>
-        </ion-col>
-        <ion-col>
-          <button ion-button block color="orange">Edit {{buttonName.name}} information</button>
-        </ion-col>
-
-      </div>
+      <h1 padding>{{buttonName.name}}</h1>
+      <ion-col>
+        <button ion-button block color="yellow" (click)="getDataById(buttonName.id)">{{buttonName.name}}
+          information</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="orange" (click)="editData(buttonName.id)">Edit {{buttonName.name}}
+          information</button>
+      </ion-col>
     </ion-card>
-  </form>
+  </div>
 
-  <form (ngSubmit)="onSubmit()">
-    <ion-card padding>
-      <ion-item>
-        <ion-input type="text" placeholder="fill the ID" text-center></ion-input>
-      </ion-item>
-      <button ion-button block color="red">Delete</button>
-    </ion-card>
-  </form>
+  <h1>Add a Student</h1>
+  <ion-card padding>
+    <ion-item>
+      <ion-label color="dark">
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder="fill the new student name" text-center></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">
+        Score
+      </ion-label>
+      <ion-input type="text" placeholder="fill the new student score" text-center></ion-input>
+    </ion-item>
+    <button ion-button block color="primary" (click)="addData()">Confirm</button>
+
+  </ion-card>
+
+  <h1>Student</h1>
+  <ion-card padding>
+    <ion-item>
+      <ion-label color="dark">
+        ID
+      </ion-label>
+      <ion-input type="text" placeholder="fill the ID" text-center></ion-input>
+    </ion-item>
+    <button ion-button block color="primary" (click)="deleteData()">Delete</button>
+  </ion-card>
+
 
 </ion-content>
