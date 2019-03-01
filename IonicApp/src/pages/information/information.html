@@ -1,0 +1,19 @@
+<!--
+  Generated template for the InformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Information</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row *ngFor="let data of studentData; let i = index">
+    <ion-col> {{i+1}} Id :{{data.id}}</ion-col>
+    <ion-col> Name :{{data.name}}</ion-col>
+    <ion-col> Score :{{data.score}}</ion-col>
+  </ion-row>
+</ion-content>

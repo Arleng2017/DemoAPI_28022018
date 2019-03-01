@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Training API
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form  *ngFor="let buttonName of getData" (ngSubmit)="onSubmit(buttonName.id)">
+    <ion-card padding>
+      <div>
+        <h1 padding>{{buttonName.name}}</h1>
+        <ion-col>
+          <button ion-button block color="yellow">{{buttonName.name}} information</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block color="orange">Edit {{buttonName.name}} information</button>
+        </ion-col>
+
+      </div>
+    </ion-card>
+  </form>
+
+  <form (ngSubmit)="onSubmit()">
+    <ion-card padding>
+      <ion-item>
+        <ion-input type="text" placeholder="fill the ID" text-center></ion-input>
+      </ion-item>
+      <button ion-button block color="red">Delete</button>
+    </ion-card>
+  </form>
+
+</ion-content>
