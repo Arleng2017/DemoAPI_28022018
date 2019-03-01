@@ -11,9 +11,11 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-row *ngFor="let data of studentData; let i = index">
-    <ion-col> {{i+1}} Id :{{data.id}}</ion-col>
-    <ion-col> Name :{{data.name}}</ion-col>
-    <ion-col> Score :{{data.score}}</ion-col>
-  </ion-row>
+
+  <ion-card padding>
+    <ion-item>Id : {{studentData?.id}}</ion-item>
+    <ion-item>Name : {{studentData?.name}}</ion-item>
+    <ion-item>Score : {{studentData?.score}}</ion-item>
+  </ion-card>
+
 </ion-content>
