@@ -35,4 +35,8 @@ export class CallApiProvider {
   public deleteStudentData(id: any): Observable<any> {
     return this.http.delete('https://localhost:5001/api/Demo/' + id);
   }
+
+  public getAllName(){
+    return this.http.get("https://localhost:5001/api/Name");
+  }
 }
