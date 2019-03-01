@@ -53,4 +53,8 @@ export class HomePage {
 
     });;
   }
+
+  gotoGetnamePage(){
+    this.navCtrl.push("GetnamePage")
+  }
 }
