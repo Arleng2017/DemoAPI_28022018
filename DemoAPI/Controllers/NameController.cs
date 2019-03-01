@@ -26,7 +26,7 @@ namespace DemoAPI.Controllers
             {
                 return allMember[GetByIndex];
             }
-            return "ตำแหน่งที่ส่งมาไม่ถูกต้อง";
+            return string.Empty;
         }
 
         // POST api/values
