@@ -16,15 +16,15 @@
       <ion-label color="dark">
         Name
       </ion-label>
-      <ion-input type="text" placeholder="fill the new Name" text-center></ion-input>
+      <ion-input type="text" placeholder="fill the new Name" text-center [(ngModel)]="editStudentName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="dark">
         Score
       </ion-label>
-      <ion-input type="text" placeholder="fill the new Score" text-center></ion-input>
+      <ion-input type="text" placeholder="fill the new Score" text-center [(ngModel)]="editStudentScore"></ion-input>
     </ion-item>
   </ion-card>
-  <button ion-button block color="primary">Confirm</button>
+  <button ion-button block color="primary" (click)="editStudentData()">Confirm</button>
 </ion-content>

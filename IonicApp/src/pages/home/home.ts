@@ -43,6 +43,9 @@ export class HomePage {
     this.callAPI.postStudentData(this.newStudentName).subscribe(data => {
 
     });;
+    // this.callAPI.postStudentData(this.newStudentScore).subscribe(data => {
+
+    // });;
   }
 
   deleteData() {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CallApiProvider } from '../../providers/call-api/call-api';
 
 /**
  * Generated class for the EditDataPage page.
@@ -15,7 +16,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditDataPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  studentID: any;
+  studentData: any;
+  editStudentName: string;
+  editStudentScore: number;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public callAPI: CallApiProvider) {
+    this.studentID = this.navParams.get('_idStudent');
+    console.log(this.studentID);
+
+    this.callAPI.getStudentDataByID(this.studentID).subscribe(data => {
+      console.log(data);
+      this.studentData = data;
+    });
+    console.log(this.studentData);
+
+    // this.callAPI.putStudentData(this.editStudentName).subscribe(data => {
+    //   this.studentData.name = data;
+    // });
+
+  }
+
+  editStudentData(){
+    
   }
 
   ionViewDidLoad() {
